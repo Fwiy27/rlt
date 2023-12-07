@@ -11,15 +11,15 @@ def clear_screen():
         system('clear')
 
 def help():
-    print("------------")
+    clear_screen()
     print(f"{Fore.GREEN}bet {Fore.RESET}| Runs previous bet command")
     print(f"{Fore.GREEN}bet {{number}} {Fore.RESET}| 35x return")
     print(f"{Fore.GREEN}bet {{color}} {Fore.RESET}| 2x return on red/black 35x return on green")
     print(f"{Fore.GREEN}bet {{number}} {{amount}} {Fore.RESET}| 35x return")
     print(f"{Fore.GREEN}bet {{color}} {{amount}} {Fore.RESET}| 2x return on red/black 35x return on green")
     print(f"{Fore.GREEN}set {{number}}{Fore.RESET} | sets bet amount")
-    print(f"{Fore.RED} bet {{number/color}} all{Fore.RESET} | bet all money on color or number")
-    print(f"{Fore.RED} bet {{number/color}} half{Fore.RESET} | bet half of money on color or number")
+    print(f"{Fore.RED}bet {{number/color}} all{Fore.RESET} | bet all money on color or number")
+    print(f"{Fore.RED}bet {{number/color}} half{Fore.RESET} | bet half of money on color or number")
 
 def pause():
     input("Press Enter to Continue . . .")

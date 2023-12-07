@@ -18,19 +18,23 @@ class Score:
         if isinstance(bet, str):
             match bet.lower():
                 case "red":
-                    if winning_number % 2 != 0:
+                    if winning_number % 2 != 0 and winning_number != 35:
                         won = True
                 case "black":
-                    if winning_number % 2 == 0:
+                    if winning_number % 2 == 0 and winning_number != 0:
                         won = True
                 case "green":
-                    if winning_number == 0:
+                    if winning_number in [0, 35]:
+                        multiplier = 17
                         won = True
         
         # If bet is a number check number
         elif isinstance(bet, int):
-            multiplier = 34
-            if bet == winning_number:
+            if bet in [0, 35]:
+                multiplier = 17
+                won = True if winning_number in [0, 35] else False
+            elif bet == winning_number:
+                multiplier = 35
                 won = True
 
         # If user wins increase money
