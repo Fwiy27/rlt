@@ -149,7 +149,7 @@ class CLI:
             command = input('Command: ').split(' ')
 
             # Logic for previous command and runs new command
-            if command[0] == 'bet' and len(command) == 1 and previous_command:
+            if command[0] in ['bet', ''] and len(command) in [1, 0] and previous_command:
                 try:
                     if int(previous_command[2]) > self.score.get_money():
                         previous_command[2] = self.score.get_money()
